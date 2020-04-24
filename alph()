@@ -1,9 +1,0 @@
-#список файлов из каталога, отсортированный по алфавиту
-import os, time
-def alph():
-   path = os.listdir(r'') #путь к файлу
-   if len(path)!= 0:
-      Alph_sorted_files = sorted(path)
-      print(Alph_sorted_files)
-   else:
-      print('Каталог пустой')
