@@ -1,0 +1,62 @@
+import os, time
+
+#список файлов из каталога, отсортированный по алфавиту
+def alph():
+   path = os.listdir(r'') #путь
+   if len(path)!= 0:
+      Alph_sorted_files = sorted(path)
+      print(Alph_sorted_files)
+   else:
+      print('Каталог пустой')
+
+#список файлов из каталога, отсортированный по алфавиту c указанием пути к файлу
+def alph2():
+   path = os.listdir(r'') #путь
+   if len(path)!= 0:
+      for file in path:
+         fullname = [os.path.join(path, file) for file in path]
+         print(fullname)
+   else:
+      print('Каталог пустой')
+
+#список файлов, созданных больше, чем 15 дней назад
+def time15():
+   path = r'' #путь
+   file_list = os.listdir(path)
+   now = time.time()
+   if len(path)!= 0:
+      a = []
+      for file in file_list:
+         if os.path.getmtime(os.path.join(path, file)) < now - 15 * 86400:
+            if os.path.isfile(os.path.join(path, file)):
+               a.append(file)
+      print(a) 
+    else:
+        print('Файлы не найдены')
+
+#список файлов, созданных больше, чем 15 дней назад с указанием пути к файлу
+def time15():
+   path = r'' #путь
+   file_list = os.listdir(path)
+   full_list = [os.path.join(path, file) for file in file_list]
+   now = time.time()
+   if len(path)!= 0:
+      a = []
+      for file in full_list:
+         if os.path.getmtime(os.path.join(path, file)) < now - 15 * 86400:
+            if os.path.isfile(os.path.join(path, file)):
+               a.append(file)
+      print(a)
+    else:
+        print('Файлы не найдены')
+
+#список файлов из каталога, отсортированный по времени с указанием пути к файлу
+def time():
+   path = r'' #путь
+   file_list = os.listdir(path)
+   if len(path)!= 0:
+      full_list = [os.path.join(path, file) for file in file_list]
+      time_sorted_list = sorted(full_list, key = os.path.getmtime, reverse=True)
+      print(time_sorted_list)
+   else:
+      print('Каталог пустой')
