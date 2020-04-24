@@ -1,10 +1,10 @@
 import os, datetime
 import io
  
-def log(log):
+def log(log.txt):
    path = None 
    try:
-      path = open(log,'r')
+      path = open(log.txt,'r')
    except:
       return False
    path.seek(0, io.SEEK_END) #seek(<смещение>, [позиция])
