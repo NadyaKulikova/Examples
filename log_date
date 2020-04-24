@@ -1,0 +1,35 @@
+import os, datetime
+import io
+ 
+def log(log):
+   path = None 
+   try:
+      path = open(log,'r')
+   except:
+      return False
+   path.seek(0, io.SEEK_END) #seek(<смещение>, [позиция])
+   pos = path.tell() 
+   j = 0 #счетчик "["
+   b = 0 #счетчик "]"
+   for i in range(0, pos): 
+    path.seek(pos-i, io.SEEK_SET) 
+    ch = path.read(1) 
+    if ch == '[':
+       if j > 0:
+         last_line = ch+path.read(i-a)
+         break
+       else: 
+         j += 1
+    if ch == ']': 
+       if b > 0:
+         a=i 
+       else:    
+         b += 1
+   c = datetime.datetime.today().strftime("%a")
+   d = datetime.datetime.today().strftime("%b")
+   e = datetime.datetime.today().strftime("%e")
+   h = datetime.datetime.today().strftime("%Y")
+   if c in last_line and d in last_line and e in last_line and h in last_line:
+      return True
+   else:
+      return False
