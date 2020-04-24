@@ -12,4 +12,4 @@ def time15():
                a.append(file)
       print(a)
      else:
-     print('Каталог пустой')
+     print('Файлы не найдены')
