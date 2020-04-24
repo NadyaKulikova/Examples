@@ -1,0 +1,11 @@
+#список файлов из каталога, отсортированный по времени с указанием пути к файлу
+import os, time
+def time():
+   path = r"C:\\Users\\Nadya\\Desktop\\Алфавит"
+   file_list = os.listdir(path)
+   if len(path)!= 0:
+      full_list = [os.path.join(path, file) for file in file_list]
+      time_sorted_list = sorted(full_list, key = os.path.getmtime, reverse=True)
+      print(time_sorted_list)
+   else:
+      print('Каталог пустой')
