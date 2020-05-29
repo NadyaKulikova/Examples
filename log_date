@@ -7,7 +7,7 @@ def log(log.txt):
       path = open(log.txt,'r')
    except:
       return False
-   path.seek(0, io.SEEK_END) #seek(<смещение>, [позиция])
+   path.seek(0, io.SEEK_END)
    pos = path.tell() 
    j = 0 #счетчик "["
    b = 0 #счетчик "]"
